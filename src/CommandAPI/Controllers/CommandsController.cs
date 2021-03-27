@@ -34,7 +34,7 @@ namespace CommandAPI.Controllers
             var commandItem = _repository.GetCommandById(id);
             if (commandItem is null)
             {
-                NotFound();
+                return NotFound();
             }
             return Ok(_mapper.Map<CommandReadDto>(commandItem));
         }
